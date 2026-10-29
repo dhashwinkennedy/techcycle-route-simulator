@@ -91,9 +91,9 @@ It features an interactive GIS operations console built in React, TypeScript, an
 
 ### Frontend
 - **Framework & Language:** React 18 & TypeScript (v5.6+)
-- **Build Tool:** Vite (v6.0+)
+- **Build Tool:** Vite (v5.4+)
 - **Routing:** React Router DOM (v6.28+)
-- **Styling:** Tailwind CSS (v3.4+) & PostCSS
+- **Styling:** Custom responsive CSS design system (`styles.css`)
 - **Mapping & GIS:** Leaflet (v1.9+) & React-Leaflet (v4.2+)
 - **Map Tile Provider:** Geoapify Raster Tiles API (with automatic OpenStreetMap fallback)
 - **UI Icons:** Lucide React (v0.468+)
@@ -129,44 +129,24 @@ TECHCYCLE/
 │   └── .gitignore                # Backend-specific ignore rules
 ├── frontend/
 │   ├── src/
-│   │   ├── api/                  # Axios/fetch typed API service clients
-│   │   │   ├── client.ts         # Base HTTP client with error handling
-│   │   │   ├── dashboard.ts      # Dashboard KPI endpoints
-│   │   │   ├── facilities.ts     # Facility CRUD endpoints
-│   │   │   ├── pickupPoints.ts   # Pickup point CRUD and load updates
-│   │   │   ├── settings.ts       # Settings and simulation clock endpoints
-│   │   │   ├── simulations.ts    # Simulation planning, details, and execution
-│   │   │   └── vehicles.ts       # Vehicle CRUD endpoints
-│   │   ├── components/           # Reusable UI component library
-│   │   │   ├── common/           # Button, Card, Modal, Badge, ProgressBar, Toast, etc.
-│   │   │   ├── layout/           # AppLayout, Header, Sidebar
-│   │   │   └── map/              # InteractiveMap, LocationPickerModal, MapLegend, etc.
-│   │   ├── context/              # Global React context (AppContext)
-│   │   ├── pages/                # Application pages
-│   │   │   ├── DashboardPage.tsx # Live KPI cards, quick actions, demand distribution
-│   │   │   ├── FacilitiesPage.tsx# Hub registration, interactive picker, fleet list
-│   │   │   ├── MapPage.tsx       # Fullscreen Leaflet map, layer toggles, route review
-│   │   │   ├── NotFoundPage.tsx  # Fallback 404 handler
-│   │   │   ├── PickupPointsPage.tsx # Table with status filters and capacity gauges
-│   │   │   ├── PickupPointDetailPage.tsx # Node inspection, historical log, load deposit
-│   │   │   ├── SettingsPage.tsx  # Simulation rules, virtual clock advance, API status
-│   │   │   ├── SimulationDetailPage.tsx # Route cards, stop tables, atomic execution
-│   │   │   ├── SimulationPlannerPage.tsx# Objective picker, constraint toggles, plan generator
-│   │   │   ├── SimulationsListPage.tsx  # Audit log of past simulations
-│   │   │   └── VehiclesPage.tsx  # Vehicle administration, rated vs usable capacities
-│   │   ├── styles/               # Global CSS and Tailwind directives
-│   │   ├── types/                # TypeScript interfaces matching backend models
-│   │   ├── App.tsx               # Main routing shell
-│   │   └── main.tsx              # Application entry point
-│   ├── index.html                # Vite HTML template
-│   ├── package.json              # Node.js dependency manifest
+│   │   ├── api/
+│   │   │   └── client.ts         # Typed API client interfacing with FastAPI backend endpoints
+│   │   ├── types/
+│   │   │   └── index.ts          # TypeScript schemas (Facility, Vehicle, PickupPoint, Simulation)
+│   │   ├── App.tsx               # Operations console (Overview, GIS Map, Facilities, Pickups, Fleet, Planner)
+│   │   ├── MapView.tsx           # Interactive Leaflet map supporting Geoapify and OpenStreetMap tiles
+│   │   ├── main.tsx              # Application entry point and root mount
+│   │   ├── styles.css            # Complete design system styling and responsive theme rules
+│   │   └── vite-env.d.ts         # Vite environment type declarations
+│   ├── index.html                # Vite HTML entry template
+│   ├── package.json              # Node.js dependencies (React 18, Leaflet, React Router, Lucide)
 │   ├── package-lock.json         # Pinned npm dependency tree
-│   ├── postcss.config.js         # PostCSS configuration for Tailwind
-│   ├── tailwind.config.js        # Tailwind CSS palette and typography config
-│   ├── tsconfig.json             # TypeScript project compiler configuration
+│   ├── tsconfig.json             # Root TypeScript configuration
+│   ├── tsconfig.app.json         # Frontend TypeScript compiler options
+│   ├── tsconfig.node.json        # Vite config TypeScript compiler options
 │   ├── vite.config.ts            # Vite bundler configuration
-│   ├── README.md                 # Dedicated frontend documentation
-│   └── .env.example              # Sanitized environment template
+│   ├── README.md                 # Dedicated frontend operations documentation
+│   └── .env.example              # Sanitized frontend environment template
 ├── .gitignore                    # Root Git ignore rules (environment, databases, caches)
 └── README.md                     # Project overview and execution guide
 ```
