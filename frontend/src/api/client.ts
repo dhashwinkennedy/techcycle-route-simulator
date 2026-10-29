@@ -1,12 +1,79 @@
-const BASE = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
-export class ApiError extends Error { constructor(public status: number, message: string, public detail?: unknown) { super(message) } }
-function msg(status: number, body: unknown) { const b = body as { detail?: string | { msg?: string }[]; message?: string }; if (typeof b?.detail === 'string') return b.detail; if (Array.isArray(b?.detail)) return b.detail.map(x => x.msg).filter(Boolean).join(', '); return b?.message || ({400:'The request could not be accepted.',404:'This resource was not found.',409:'This change conflicts with existing data.',422:'Please correct the highlighted values.'}[status] || 'The server could not complete the request.'); }
-export async function api<T>(path: string, init: RequestInit = {}): Promise<T> { const controller = new AbortController(); const timeout = window.setTimeout(() => controller.abort(), 15000); try { const response = await fetch(`${BASE}${path}`, { ...init, signal: controller.signal, headers: { Accept:'application/json', ...(init.body ? {'Content-Type':'application/json'} : {}), ...init.headers } }); const isJson = response.headers.get('content-type')?.includes('application/json'); const body = isJson ? await response.json() : undefined; if (!response.ok) throw new ApiError(response.status, msg(response.status, body), body); return body as T; } catch (e) { if (e instanceof ApiError) throw e; if (e instanceof DOMException) throw new ApiError(0, 'The API request timed out.'); throw new ApiError(0, 'Unable to reach the backend. Check that it is running and VITE_API_BASE_URL is correct.'); } finally { clearTimeout(timeout); } }
-export const services = {
- health: () => api<{status?:string}>('/health'), dashboard: () => api<Record<string, unknown>>('/api/v1/dashboard/summary'), settings: () => api<Record<string, unknown>>('/api/v1/settings'), patchSettings:(b:unknown)=>api('/api/v1/settings',{method:'PATCH',body:JSON.stringify(b)}), clock:()=>api<Record<string,unknown>>('/api/v1/simulation/clock'), advanceClock:(b:unknown)=>api('/api/v1/simulation/clock/advance',{method:'POST',body:JSON.stringify(b)}),
- facilities: () => api<any>('/api/v1/facilities'), facility:(id:string|number)=>api<any>(`/api/v1/facilities/${id}`), createFacility:(b:unknown)=>api('/api/v1/facilities',{method:'POST',body:JSON.stringify(b)}), updateFacility:(id:string|number,b:unknown)=>api(`/api/v1/facilities/${id}`,{method:'PATCH',body:JSON.stringify(b)}), deleteFacility:(id:string|number)=>api(`/api/v1/facilities/${id}`,{method:'DELETE'}),
- vehicles:(facility?:string|number)=>api<any>(facility ? `/api/v1/facilities/${facility}/vehicles` : '/api/v1/vehicles'), vehicle:(id:string|number)=>api<any>(`/api/v1/vehicles/${id}`), createVehicle:(fid:string|number,b:unknown)=>api(`/api/v1/facilities/${fid}/vehicles`,{method:'POST',body:JSON.stringify(b)}), updateVehicle:(id:string|number,b:unknown)=>api(`/api/v1/vehicles/${id}`,{method:'PATCH',body:JSON.stringify(b)}), deleteVehicle:(id:string|number)=>api(`/api/v1/vehicles/${id}`,{method:'DELETE'}),
- pickups:()=>api<any>('/api/v1/pickup-points'), pickup:(id:string|number)=>api<any>(`/api/v1/pickup-points/${id}`), createPickup:(b:unknown)=>api('/api/v1/pickup-points',{method:'POST',body:JSON.stringify(b)}), updatePickup:(id:string|number,b:unknown)=>api(`/api/v1/pickup-points/${id}`,{method:'PATCH',body:JSON.stringify(b)}), deletePickup:(id:string|number)=>api(`/api/v1/pickup-points/${id}`,{method:'DELETE'}), load:(id:string|number,b:unknown)=>api(`/api/v1/pickup-points/${id}/load-updates`,{method:'POST',body:JSON.stringify(b)}), loadHistory:(id:string|number)=>api<any>(`/api/v1/pickup-points/${id}/load-history`),
- simulations:()=>api<any>('/api/v1/simulations'), simulation:(id:string|number)=>api<any>(`/api/v1/simulations/${id}`), plan:(b:unknown)=>api<any>('/api/v1/simulations/plan',{method:'POST',body:JSON.stringify(b)}), execute:(id:string|number)=>api(`/api/v1/simulations/${id}/execute`,{method:'POST'}), advance:(id:string|number)=>api(`/api/v1/simulations/${id}/advance`,{method:'POST'}), routes:(id:string|number)=>api<any>(`/api/v1/simulations/${id}/routes`), metrics:(id:string|number)=>api<any>(`/api/v1/simulations/${id}/metrics`)
-};
-export const collection = <T,>(data: any): T[] => Array.isArray(data) ? data : (data?.items || data?.data || data?.results || []);
+import { BackendApiError } from '../types';
+
+export class ApiError extends Error {
+  code: string;
+  status: number;
+  details: any[];
+
+  constructor(status: number, message: string, code: string = 'API_ERROR', details: any[] = []) {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+    this.code = code;
+    this.details = details;
+  }
+}
+
+const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+
+export async function apiClient<T>(
+  endpoint: string,
+  options: RequestInit = {}
+): Promise<T> {
+  const url = `${BASE_URL.replace(/\/+$/, '')}/${endpoint.replace(/^\/+/, '')}`;
+  
+  const headers: Record<string, string> = {
+    'Accept': 'application/json',
+    ...(options.headers as Record<string, string> || {}),
+  };
+
+  if (options.body && !(options.body instanceof FormData)) {
+    headers['Content-Type'] = 'application/json';
+  }
+
+  try {
+    const res = await fetch(url, {
+      ...options,
+      headers,
+    });
+
+    if (res.status === 204) {
+      return {} as T;
+    }
+
+    const contentType = res.headers.get('content-type');
+    let data: any = null;
+    if (contentType && contentType.includes('application/json')) {
+      data = await res.json();
+    } else {
+      data = await res.text();
+    }
+
+    if (!res.ok) {
+      let message = `Request failed with status ${res.status}`;
+      let code = 'HTTP_ERROR';
+      let details: any[] = [];
+
+      if (data && typeof data === 'object') {
+        const errObj = (data as BackendApiError).error || data;
+        if (errObj.message) message = errObj.message;
+        if (errObj.code) code = errObj.code;
+        if (errObj.details) details = errObj.details;
+      }
+
+      throw new ApiError(res.status, message, code, details);
+    }
+
+    return data as T;
+  } catch (err: any) {
+    if (err instanceof ApiError) {
+      throw err;
+    }
+    // Network or parser error
+    throw new ApiError(
+      0,
+      err.message || 'Unable to connect to the backend server. Please verify it is running.',
+      'NETWORK_ERROR'
+    );
+  }
+}
