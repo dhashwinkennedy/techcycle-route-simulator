@@ -1,0 +1,24 @@
+{
+  "generated_from": "app.main FastAPI route declarations",
+  "automated_test_strategy": "isolated SQLite database; live Geoapify excluded",
+  "endpoints": [
+    {"method":"GET","path":"/health","status":"tested"},
+    {"method":"GET","path":"/api/v1/integrations/geoapify/status","status":"tested_manually_live"},
+    {"method":"GET,PATCH","path":"/api/v1/settings","status":"implemented"},
+    {"method":"GET","path":"/api/v1/simulation/clock","status":"implemented"},
+    {"method":"POST","path":"/api/v1/simulation/clock/advance","status":"tested"},
+    {"method":"GET","path":"/api/v1/dashboard/summary","status":"tested_manually"},
+    {"method":"POST,GET","path":"/api/v1/facilities","status":"tested"},
+    {"method":"GET,PATCH,DELETE","path":"/api/v1/facilities/{id}","status":"implemented"},
+    {"method":"POST,GET","path":"/api/v1/facilities/{facility_id}/vehicles","status":"tested"},
+    {"method":"GET,PATCH,DELETE","path":"/api/v1/vehicles/{id}","status":"implemented"},
+    {"method":"POST,GET","path":"/api/v1/pickup-points","status":"tested"},
+    {"method":"GET,PATCH,DELETE","path":"/api/v1/pickup-points/{id}","status":"implemented"},
+    {"method":"POST","path":"/api/v1/pickup-points/{id}/load-updates","status":"tested"},
+    {"method":"GET","path":"/api/v1/pickup-points/{id}/load-history","status":"implemented"},
+    {"method":"POST,GET","path":"/api/v1/simulations/plan and /api/v1/simulations","status":"tested"},
+    {"method":"GET","path":"/api/v1/simulations/{id}, /routes, /metrics","status":"implemented"},
+    {"method":"POST","path":"/api/v1/simulations/{id}/execute","status":"tested"},
+    {"method":"POST","path":"/api/v1/simulations/{id}/advance","status":"implemented_501"}
+  ]
+}

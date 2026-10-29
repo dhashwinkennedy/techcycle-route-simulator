@@ -1,0 +1,25 @@
+id,name,category,facility_assignment,latitude,longitude,current_pending_weight_kg,current_pending_volume_m3,maximum_safe_weight_kg,maximum_safe_volume_m3,weight_utilisation_percent,volume_utilisation_percent,waiting_days,status
+4797fa20-f456-400b-8ce3-c6c9273eb674,Simulated Anna Nagar Community,Residential community,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.086,80.21,630.0,1.7,900.0,4.5,70.0,37.78,2.0,due
+3d877490-5f9d-4a79-9310-d05f9b2b6333,Simulated Mogappair Apartments,Apartment complex,5d745924-4968-44ea-91cb-1751b14ab086,13.079,80.175,570.0,1.9,700.0,3.5,81.43,54.29,6.1,urgent
+49d82b88-af55-4f9d-bff9-fea8686239ce,Simulated Kilpauk Residents,Residential area or colony,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.083,80.241,390.0,3.25,800.0,4.0,48.75,81.25,1.0,urgent
+b79c8b91-9265-4329-b7d3-a4fa50792c7a,Simulated Perambur Over-capacity,Residential community,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.113,80.233,1060.0,3.8,1000.0,5.0,106.0,76.0,3.0,critical
+11a3f259-11d8-4dd9-afe5-159fa73748a2,Simulated Velachery Apartments,Apartment complex,5d745924-4968-44ea-91cb-1751b14ab086,12.981,80.219,400.0,3.7,900.0,4.5,44.44,82.22,5.9,urgent
+cbae5764-670b-4ff4-a111-9e5def34764a,Simulated Adyar Residents,Residential area or colony,5d745924-4968-44ea-91cb-1751b14ab086,13.006,80.258,260.0,1.0,750.0,3.8,34.67,26.32,0.5,normal
+90bf1cbe-d396-4d5b-b191-82ebe16bbceb,Simulated Tambaram Community,Residential community,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.924,80.127,720.0,2.6,1000.0,5.0,72.0,52.0,7.2,critical
+97d10658-95da-4942-b430-a5f780b51995,Simulated Thoraipakkam Apartments,Apartment complex,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.944,80.238,330.0,3.45,850.0,4.2,38.82,82.14,6.0,urgent
+12a29b1a-edc6-425c-955b-d3b53db8da94,Simulated Ambattur Residents,Residential area or colony,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.114,80.154,285.0,1.2,950.0,4.8,30.0,25.0,2.0,normal
+b3c934e7-a1d3-4f99-8546-3eb77cb9a490,Simulated Nungambakkam College,College,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.061,80.241,480.0,1.3,700.0,3.5,68.57,37.14,4.0,normal
+dc54b05b-a8ae-4178-93e4-375225f4b448,Simulated Guindy Technical College,College,5d745924-4968-44ea-91cb-1751b14ab086,13.007,80.218,650.0,2.0,800.0,4.0,81.25,50.0,6.5,urgent
+07962076-dce9-42e6-beea-8d4c688db493,Simulated OMR Engineering Institute,College,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.934,80.229,350.0,3.8,900.0,4.5,38.89,84.44,1.0,urgent
+42434e04-a294-4e13-a883-c3a71de022c0,Simulated Egmore School,School,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.073,80.261,90.0,0.35,400.0,2.0,22.5,17.5,2.0,normal
+b22bfd2c-c784-45e4-bf9f-6093d208af99,Simulated Madipakkam School,School,5d745924-4968-44ea-91cb-1751b14ab086,12.964,80.198,320.0,0.8,450.0,2.2,71.11,36.36,6.2,urgent
+e2a3c3f0-9d5f-4578-be2c-faa872ada198,Simulated Teynampet Hospital,Hospital,5d745924-4968-44ea-91cb-1751b14ab086,13.042,80.25,610.0,2.9,750.0,3.8,81.33,76.32,7.1,critical
+985a3eb6-182d-4121-8056-d79e6b9815ed,Simulated Porur Hospital,Hospital,5d745924-4968-44ea-91cb-1751b14ab086,13.036,80.159,290.0,1.1,800.0,4.0,36.25,27.5,3.0,normal
+189858fa-c90b-446a-abe4-f2eb82b099a5,Simulated T Nagar IT Shop,Business or IT shop,5d745924-4968-44ea-91cb-1751b14ab086,13.041,80.234,840.0,1.4,1000.0,5.0,84.0,28.0,5.0,urgent
+1eac55c0-64c7-4a53-94fd-200077bbf951,Simulated Ambattur Electronics Shop,Business or IT shop,d0e3df80-5399-461f-88b9-54e5e0057a5e,13.098,80.165,980.0,2.1,1100.0,5.5,89.09,38.18,6.8,urgent
+4d17411b-0f48-46a2-bee7-b7480fbba54f,Simulated OMR Device Outlet,Business or IT shop,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.922,80.234,240.0,3.9,950.0,4.8,25.26,81.25,2.0,urgent
+48fb1b62-3031-42ae-8125-fc76edae02c5,Simulated Nandanam Office Park,Office,5d745924-4968-44ea-91cb-1751b14ab086,13.031,80.244,520.0,1.7,850.0,4.2,61.18,40.48,6.1,urgent
+c9cd25ae-d3c5-4022-bde2-fe1e780ef66b,Simulated Guindy Office Cluster,Office,5d745924-4968-44ea-91cb-1751b14ab086,13.014,80.208,790.0,2.4,1000.0,5.0,79.0,48.0,3.0,due
+cdafe0c6-d398-4bd1-926e-f6e40fe45f80,Simulated Siruseri Office Campus,Office,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.823,80.225,900.0,3.1,1200.0,6.0,75.0,51.67,5.5,due
+eb948cf6-7b7b-4e99-8577-9e502fdd333d,Simulated Mylapore Institution,Other institution,5d745924-4968-44ea-91cb-1751b14ab086,13.034,80.267,420.0,1.2,600.0,3.0,70.0,40.0,4.0,due
+841595e0-8228-4f3f-85f3-8f3a370f1f09,Simulated Chromepet Training Centre,Other institution,d8b4e1dd-3270-446c-b4e0-e7902809f4f2,12.95,80.143,150.0,2.5,650.0,3.2,23.08,78.12,0.5,due

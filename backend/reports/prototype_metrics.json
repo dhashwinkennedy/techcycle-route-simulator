@@ -1,0 +1,2277 @@
+{
+  "source": {
+    "database_records": "synthetic simulated demo data from seed_demo.py",
+    "saved_run_id": "3fbfb4dd-e659-4714-9768-5af154a07caf",
+    "saved_run_created_at": "2026-10-29T09:12:36.680962",
+    "routing_source": "haversine_fallback_estimate",
+    "geoapify_matrix_cache": "not implemented / no cached records",
+    "warning": "Distances are estimated Haversine \u00d7 1.3, not actual road distances."
+  },
+  "settings": {
+    "weight_safety_margin": 0.1,
+    "volume_safety_margin": 0.15,
+    "due_threshold": 0.7,
+    "urgent_threshold": 0.8,
+    "critical_threshold": 1.0,
+    "mandatory_wait_days": 7,
+    "opportunistic_detour_km": 3,
+    "working_minutes_per_day": 480,
+    "fuel_l_per_km": 0.22,
+    "fuel_price_per_l": 100,
+    "co2_kg_per_l": 2.68
+  },
+  "facilities": [
+    {
+      "id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+      "name": "Simulated North Chennai Recovery Hub",
+      "latitude": 13.1105,
+      "longitude": 80.2542,
+      "lorry_count": 3
+    },
+    {
+      "id": "5d745924-4968-44ea-91cb-1751b14ab086",
+      "name": "Simulated Guindy Circular Hub",
+      "latitude": 13.0108,
+      "longitude": 80.2206,
+      "lorry_count": 2
+    },
+    {
+      "id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+      "name": "Simulated Sholinganallur Recovery Hub",
+      "latitude": 12.9012,
+      "longitude": 80.2279,
+      "lorry_count": 2
+    }
+  ],
+  "vehicles": [
+    {
+      "id": "53c27fa3-4cfa-4187-9efa-989fc53ca309",
+      "name": "SIM-NORTH-DIESEL-1",
+      "home_facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+      "fuel_type": "diesel",
+      "rated_weight_capacity_kg": 1000.0,
+      "rated_volume_capacity_m3": 5.0,
+      "usable_weight_capacity_kg": 900.0,
+      "usable_volume_capacity_m3": 4.25
+    },
+    {
+      "id": "b62b948f-35c1-4203-b8ea-beaf862f9b69",
+      "name": "SIM-NORTH-DIESEL-2",
+      "home_facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+      "fuel_type": "diesel",
+      "rated_weight_capacity_kg": 1000.0,
+      "rated_volume_capacity_m3": 5.0,
+      "usable_weight_capacity_kg": 900.0,
+      "usable_volume_capacity_m3": 4.25
+    },
+    {
+      "id": "aee8b909-cf88-437c-a48c-d016054a2b3f",
+      "name": "SIM-NORTH-DIESEL-3",
+      "home_facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+      "fuel_type": "diesel",
+      "rated_weight_capacity_kg": 1000.0,
+      "rated_volume_capacity_m3": 5.0,
+      "usable_weight_capacity_kg": 900.0,
+      "usable_volume_capacity_m3": 4.25
+    },
+    {
+      "id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+      "name": "SIM-GUINDY-DIESEL-1",
+      "home_facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+      "fuel_type": "diesel",
+      "rated_weight_capacity_kg": 1200.0,
+      "rated_volume_capacity_m3": 6.0,
+      "usable_weight_capacity_kg": 1080.0,
+      "usable_volume_capacity_m3": 5.1
+    },
+    {
+      "id": "3fd54692-03da-4582-85ce-7687e475641a",
+      "name": "SIM-GUINDY-ELECTRIC-1",
+      "home_facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+      "fuel_type": "electric",
+      "rated_weight_capacity_kg": 900.0,
+      "rated_volume_capacity_m3": 4.5,
+      "usable_weight_capacity_kg": 810.0,
+      "usable_volume_capacity_m3": 3.8249999999999997
+    },
+    {
+      "id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+      "name": "SIM-OMR-DIESEL-1",
+      "home_facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+      "fuel_type": "diesel",
+      "rated_weight_capacity_kg": 1100.0,
+      "rated_volume_capacity_m3": 5.5,
+      "usable_weight_capacity_kg": 990.0,
+      "usable_volume_capacity_m3": 4.675
+    },
+    {
+      "id": "800d1ce7-76bb-42e1-8c02-5c22fb9f0c17",
+      "name": "SIM-OMR-ELECTRIC-1",
+      "home_facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+      "fuel_type": "electric",
+      "rated_weight_capacity_kg": 800.0,
+      "rated_volume_capacity_m3": 4.0,
+      "usable_weight_capacity_kg": 720.0,
+      "usable_volume_capacity_m3": 3.4
+    }
+  ],
+  "pickup_points": [
+    {
+      "id": "4797fa20-f456-400b-8ce3-c6c9273eb674",
+      "name": "Simulated Anna Nagar Community",
+      "category": "Residential community",
+      "latitude": 13.086,
+      "longitude": 80.21,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 900.0,
+      "maximum_safe_volume_m3": 4.5,
+      "current_pending_weight_kg": 630.0,
+      "current_pending_volume_m3": 1.7,
+      "service_minutes": 18,
+      "active": true,
+      "weight_utilisation_percent": 70.0,
+      "volume_utilisation_percent": 37.78,
+      "waiting_days": 2.0,
+      "status": "due",
+      "reasons": [
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.435517",
+      "updated_at": "2026-10-29 08:49:04.435520",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "3d877490-5f9d-4a79-9310-d05f9b2b6333",
+      "name": "Simulated Mogappair Apartments",
+      "category": "Apartment complex",
+      "latitude": 13.079,
+      "longitude": 80.175,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 700.0,
+      "maximum_safe_volume_m3": 3.5,
+      "current_pending_weight_kg": 570.0,
+      "current_pending_volume_m3": 1.9,
+      "service_minutes": 16,
+      "active": true,
+      "weight_utilisation_percent": 81.43,
+      "volume_utilisation_percent": 54.29,
+      "waiting_days": 6.1,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.440798",
+      "updated_at": "2026-10-29 08:49:04.440799",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "49d82b88-af55-4f9d-bff9-fea8686239ce",
+      "name": "Simulated Kilpauk Residents",
+      "category": "Residential area or colony",
+      "latitude": 13.083,
+      "longitude": 80.241,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 800.0,
+      "maximum_safe_volume_m3": 4.0,
+      "current_pending_weight_kg": 390.0,
+      "current_pending_volume_m3": 3.25,
+      "service_minutes": 17,
+      "active": true,
+      "weight_utilisation_percent": 48.75,
+      "volume_utilisation_percent": 81.25,
+      "waiting_days": 1.0,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.441469",
+      "updated_at": "2026-10-29 08:49:04.441470",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+      "name": "Simulated Perambur Over-capacity",
+      "category": "Residential community",
+      "latitude": 13.113,
+      "longitude": 80.233,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1000.0,
+      "maximum_safe_volume_m3": 5.0,
+      "current_pending_weight_kg": 1060.0,
+      "current_pending_volume_m3": 3.8,
+      "service_minutes": 20,
+      "active": true,
+      "weight_utilisation_percent": 106.0,
+      "volume_utilisation_percent": 76.0,
+      "waiting_days": 3.0,
+      "status": "critical",
+      "reasons": [
+        "critical_capacity",
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.442037",
+      "updated_at": "2026-10-29 08:49:04.442038",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+      "name": "Simulated Velachery Apartments",
+      "category": "Apartment complex",
+      "latitude": 12.981,
+      "longitude": 80.219,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 900.0,
+      "maximum_safe_volume_m3": 4.5,
+      "current_pending_weight_kg": 400.0,
+      "current_pending_volume_m3": 3.7,
+      "service_minutes": 18,
+      "active": true,
+      "weight_utilisation_percent": 44.44,
+      "volume_utilisation_percent": 82.22,
+      "waiting_days": 5.9,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.442545",
+      "updated_at": "2026-10-29 08:49:04.442546",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "cbae5764-670b-4ff4-a111-9e5def34764a",
+      "name": "Simulated Adyar Residents",
+      "category": "Residential area or colony",
+      "latitude": 13.006,
+      "longitude": 80.258,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 750.0,
+      "maximum_safe_volume_m3": 3.8,
+      "current_pending_weight_kg": 260.0,
+      "current_pending_volume_m3": 1.0,
+      "service_minutes": 15,
+      "active": true,
+      "weight_utilisation_percent": 34.67,
+      "volume_utilisation_percent": 26.32,
+      "waiting_days": 0.5,
+      "status": "normal",
+      "reasons": [],
+      "created_at": "2026-10-29 08:49:04.443046",
+      "updated_at": "2026-10-29 08:49:04.443046",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "90bf1cbe-d396-4d5b-b191-82ebe16bbceb",
+      "name": "Simulated Tambaram Community",
+      "category": "Residential community",
+      "latitude": 12.924,
+      "longitude": 80.127,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1000.0,
+      "maximum_safe_volume_m3": 5.0,
+      "current_pending_weight_kg": 720.0,
+      "current_pending_volume_m3": 2.6,
+      "service_minutes": 22,
+      "active": true,
+      "weight_utilisation_percent": 72.0,
+      "volume_utilisation_percent": 52.0,
+      "waiting_days": 7.2,
+      "status": "critical",
+      "reasons": [
+        "mandatory_wait",
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.443584",
+      "updated_at": "2026-10-29 08:49:04.443584",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    },
+    {
+      "id": "97d10658-95da-4942-b430-a5f780b51995",
+      "name": "Simulated Thoraipakkam Apartments",
+      "category": "Apartment complex",
+      "latitude": 12.944,
+      "longitude": 80.238,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 850.0,
+      "maximum_safe_volume_m3": 4.2,
+      "current_pending_weight_kg": 330.0,
+      "current_pending_volume_m3": 3.45,
+      "service_minutes": 17,
+      "active": true,
+      "weight_utilisation_percent": 38.82,
+      "volume_utilisation_percent": 82.14,
+      "waiting_days": 6.0,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.444089",
+      "updated_at": "2026-10-29 08:49:04.444090",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    },
+    {
+      "id": "12a29b1a-edc6-425c-955b-d3b53db8da94",
+      "name": "Simulated Ambattur Residents",
+      "category": "Residential area or colony",
+      "latitude": 13.114,
+      "longitude": 80.154,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 950.0,
+      "maximum_safe_volume_m3": 4.8,
+      "current_pending_weight_kg": 285.0,
+      "current_pending_volume_m3": 1.2,
+      "service_minutes": 19,
+      "active": true,
+      "weight_utilisation_percent": 30.0,
+      "volume_utilisation_percent": 25.0,
+      "waiting_days": 2.0,
+      "status": "normal",
+      "reasons": [],
+      "created_at": "2026-10-29 08:49:04.444577",
+      "updated_at": "2026-10-29 08:49:04.444578",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+      "name": "Simulated Nungambakkam College",
+      "category": "College",
+      "latitude": 13.061,
+      "longitude": 80.241,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 700.0,
+      "maximum_safe_volume_m3": 3.5,
+      "current_pending_weight_kg": 480.0,
+      "current_pending_volume_m3": 1.3,
+      "service_minutes": 25,
+      "active": true,
+      "weight_utilisation_percent": 68.57,
+      "volume_utilisation_percent": 37.14,
+      "waiting_days": 4.0,
+      "status": "normal",
+      "reasons": [],
+      "created_at": "2026-10-29 08:49:04.445065",
+      "updated_at": "2026-10-29 08:49:04.445067",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "dc54b05b-a8ae-4178-93e4-375225f4b448",
+      "name": "Simulated Guindy Technical College",
+      "category": "College",
+      "latitude": 13.007,
+      "longitude": 80.218,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 800.0,
+      "maximum_safe_volume_m3": 4.0,
+      "current_pending_weight_kg": 650.0,
+      "current_pending_volume_m3": 2.0,
+      "service_minutes": 28,
+      "active": true,
+      "weight_utilisation_percent": 81.25,
+      "volume_utilisation_percent": 50.0,
+      "waiting_days": 6.5,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.445630",
+      "updated_at": "2026-10-29 08:49:04.445630",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "07962076-dce9-42e6-beea-8d4c688db493",
+      "name": "Simulated OMR Engineering Institute",
+      "category": "College",
+      "latitude": 12.934,
+      "longitude": 80.229,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 900.0,
+      "maximum_safe_volume_m3": 4.5,
+      "current_pending_weight_kg": 350.0,
+      "current_pending_volume_m3": 3.8,
+      "service_minutes": 27,
+      "active": true,
+      "weight_utilisation_percent": 38.89,
+      "volume_utilisation_percent": 84.44,
+      "waiting_days": 1.0,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.446135",
+      "updated_at": "2026-10-29 08:49:04.446136",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    },
+    {
+      "id": "42434e04-a294-4e13-a883-c3a71de022c0",
+      "name": "Simulated Egmore School",
+      "category": "School",
+      "latitude": 13.073,
+      "longitude": 80.261,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 400.0,
+      "maximum_safe_volume_m3": 2.0,
+      "current_pending_weight_kg": 90.0,
+      "current_pending_volume_m3": 0.35,
+      "service_minutes": 14,
+      "active": true,
+      "weight_utilisation_percent": 22.5,
+      "volume_utilisation_percent": 17.5,
+      "waiting_days": 2.0,
+      "status": "normal",
+      "reasons": [],
+      "created_at": "2026-10-29 08:49:04.446856",
+      "updated_at": "2026-10-29 08:49:04.446857",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "b22bfd2c-c784-45e4-bf9f-6093d208af99",
+      "name": "Simulated Madipakkam School",
+      "category": "School",
+      "latitude": 12.964,
+      "longitude": 80.198,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 450.0,
+      "maximum_safe_volume_m3": 2.2,
+      "current_pending_weight_kg": 320.0,
+      "current_pending_volume_m3": 0.8,
+      "service_minutes": 16,
+      "active": true,
+      "weight_utilisation_percent": 71.11,
+      "volume_utilisation_percent": 36.36,
+      "waiting_days": 6.2,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.447389",
+      "updated_at": "2026-10-29 08:49:04.447390",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "e2a3c3f0-9d5f-4578-be2c-faa872ada198",
+      "name": "Simulated Teynampet Hospital",
+      "category": "Hospital",
+      "latitude": 13.042,
+      "longitude": 80.25,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 750.0,
+      "maximum_safe_volume_m3": 3.8,
+      "current_pending_weight_kg": 610.0,
+      "current_pending_volume_m3": 2.9,
+      "service_minutes": 25,
+      "active": true,
+      "weight_utilisation_percent": 81.33,
+      "volume_utilisation_percent": 76.32,
+      "waiting_days": 7.1,
+      "status": "critical",
+      "reasons": [
+        "mandatory_wait",
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.447907",
+      "updated_at": "2026-10-29 08:49:04.447908",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "985a3eb6-182d-4121-8056-d79e6b9815ed",
+      "name": "Simulated Porur Hospital",
+      "category": "Hospital",
+      "latitude": 13.036,
+      "longitude": 80.159,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 800.0,
+      "maximum_safe_volume_m3": 4.0,
+      "current_pending_weight_kg": 290.0,
+      "current_pending_volume_m3": 1.1,
+      "service_minutes": 22,
+      "active": true,
+      "weight_utilisation_percent": 36.25,
+      "volume_utilisation_percent": 27.5,
+      "waiting_days": 3.0,
+      "status": "normal",
+      "reasons": [],
+      "created_at": "2026-10-29 08:49:04.448664",
+      "updated_at": "2026-10-29 08:49:04.448665",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+      "name": "Simulated T Nagar IT Shop",
+      "category": "Business or IT shop",
+      "latitude": 13.041,
+      "longitude": 80.234,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1000.0,
+      "maximum_safe_volume_m3": 5.0,
+      "current_pending_weight_kg": 840.0,
+      "current_pending_volume_m3": 1.4,
+      "service_minutes": 20,
+      "active": true,
+      "weight_utilisation_percent": 84.0,
+      "volume_utilisation_percent": 28.0,
+      "waiting_days": 5.0,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.449191",
+      "updated_at": "2026-10-29 08:49:04.449192",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+      "name": "Simulated Ambattur Electronics Shop",
+      "category": "Business or IT shop",
+      "latitude": 13.098,
+      "longitude": 80.165,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1100.0,
+      "maximum_safe_volume_m3": 5.5,
+      "current_pending_weight_kg": 980.0,
+      "current_pending_volume_m3": 2.1,
+      "service_minutes": 23,
+      "active": true,
+      "weight_utilisation_percent": 89.09,
+      "volume_utilisation_percent": 38.18,
+      "waiting_days": 6.8,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.449723",
+      "updated_at": "2026-10-29 08:49:04.449724",
+      "facility_assignment": "d0e3df80-5399-461f-88b9-54e5e0057a5e"
+    },
+    {
+      "id": "4d17411b-0f48-46a2-bee7-b7480fbba54f",
+      "name": "Simulated OMR Device Outlet",
+      "category": "Business or IT shop",
+      "latitude": 12.922,
+      "longitude": 80.234,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 950.0,
+      "maximum_safe_volume_m3": 4.8,
+      "current_pending_weight_kg": 240.0,
+      "current_pending_volume_m3": 3.9,
+      "service_minutes": 18,
+      "active": true,
+      "weight_utilisation_percent": 25.26,
+      "volume_utilisation_percent": 81.25,
+      "waiting_days": 2.0,
+      "status": "urgent",
+      "reasons": [
+        "urgent",
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.450353",
+      "updated_at": "2026-10-29 08:49:04.450354",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    },
+    {
+      "id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+      "name": "Simulated Nandanam Office Park",
+      "category": "Office",
+      "latitude": 13.031,
+      "longitude": 80.244,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 850.0,
+      "maximum_safe_volume_m3": 4.2,
+      "current_pending_weight_kg": 520.0,
+      "current_pending_volume_m3": 1.7,
+      "service_minutes": 24,
+      "active": true,
+      "weight_utilisation_percent": 61.18,
+      "volume_utilisation_percent": 40.48,
+      "waiting_days": 6.1,
+      "status": "urgent",
+      "reasons": [
+        "urgent"
+      ],
+      "created_at": "2026-10-29 08:49:04.450828",
+      "updated_at": "2026-10-29 08:49:04.450828",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "c9cd25ae-d3c5-4022-bde2-fe1e780ef66b",
+      "name": "Simulated Guindy Office Cluster",
+      "category": "Office",
+      "latitude": 13.014,
+      "longitude": 80.208,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1000.0,
+      "maximum_safe_volume_m3": 5.0,
+      "current_pending_weight_kg": 790.0,
+      "current_pending_volume_m3": 2.4,
+      "service_minutes": 26,
+      "active": true,
+      "weight_utilisation_percent": 79.0,
+      "volume_utilisation_percent": 48.0,
+      "waiting_days": 3.0,
+      "status": "due",
+      "reasons": [
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.451326",
+      "updated_at": "2026-10-29 08:49:04.451327",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "cdafe0c6-d398-4bd1-926e-f6e40fe45f80",
+      "name": "Simulated Siruseri Office Campus",
+      "category": "Office",
+      "latitude": 12.823,
+      "longitude": 80.225,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 1200.0,
+      "maximum_safe_volume_m3": 6.0,
+      "current_pending_weight_kg": 900.0,
+      "current_pending_volume_m3": 3.1,
+      "service_minutes": 30,
+      "active": true,
+      "weight_utilisation_percent": 75.0,
+      "volume_utilisation_percent": 51.67,
+      "waiting_days": 5.5,
+      "status": "due",
+      "reasons": [
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.451825",
+      "updated_at": "2026-10-29 08:49:04.451826",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    },
+    {
+      "id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+      "name": "Simulated Mylapore Institution",
+      "category": "Other institution",
+      "latitude": 13.034,
+      "longitude": 80.267,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 600.0,
+      "maximum_safe_volume_m3": 3.0,
+      "current_pending_weight_kg": 420.0,
+      "current_pending_volume_m3": 1.2,
+      "service_minutes": 19,
+      "active": true,
+      "weight_utilisation_percent": 70.0,
+      "volume_utilisation_percent": 40.0,
+      "waiting_days": 4.0,
+      "status": "due",
+      "reasons": [
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.452325",
+      "updated_at": "2026-10-29 08:49:04.452326",
+      "facility_assignment": "5d745924-4968-44ea-91cb-1751b14ab086"
+    },
+    {
+      "id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+      "name": "Simulated Chromepet Training Centre",
+      "category": "Other institution",
+      "latitude": 12.95,
+      "longitude": 80.143,
+      "address": null,
+      "notes": null,
+      "maximum_safe_weight_kg": 650.0,
+      "maximum_safe_volume_m3": 3.2,
+      "current_pending_weight_kg": 150.0,
+      "current_pending_volume_m3": 2.5,
+      "service_minutes": 17,
+      "active": true,
+      "weight_utilisation_percent": 23.08,
+      "volume_utilisation_percent": 78.12,
+      "waiting_days": 0.5,
+      "status": "due",
+      "reasons": [
+        "due"
+      ],
+      "created_at": "2026-10-29 08:49:04.452805",
+      "updated_at": "2026-10-29 08:49:04.452806",
+      "facility_assignment": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2"
+    }
+  ],
+  "optimized": {
+    "metrics": {
+      "total_road_distance_km": 347.771,
+      "driving_time_minutes": 695.54,
+      "loading_service_minutes": 774,
+      "unloading_minutes": null,
+      "total_operating_minutes": 1469.54,
+      "weight_collected_kg": 12275.0,
+      "volume_collected_m3": 53.15,
+      "number_of_trips": 17,
+      "depot_returns": 17,
+      "lorries_used": 7,
+      "estimated_fuel_l": 76.51,
+      "estimated_fuel_cost_inr": 7650.96,
+      "estimated_emissions_kg_co2": 205.046
+    },
+    "assignments": [
+      {
+        "pickup_point_id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "90bf1cbe-d396-4d5b-b191-82ebe16bbceb",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "e2a3c3f0-9d5f-4578-be2c-faa872ada198",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "3d877490-5f9d-4a79-9310-d05f9b2b6333",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "49d82b88-af55-4f9d-bff9-fea8686239ce",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "97d10658-95da-4942-b430-a5f780b51995",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "dc54b05b-a8ae-4178-93e4-375225f4b448",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "07962076-dce9-42e6-beea-8d4c688db493",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "b22bfd2c-c784-45e4-bf9f-6093d208af99",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "4d17411b-0f48-46a2-bee7-b7480fbba54f",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "4797fa20-f456-400b-8ce3-c6c9273eb674",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "c9cd25ae-d3c5-4022-bde2-fe1e780ef66b",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "cdafe0c6-d398-4bd1-926e-f6e40fe45f80",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "cbae5764-670b-4ff4-a111-9e5def34764a",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "12a29b1a-edc6-425c-955b-d3b53db8da94",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "42434e04-a294-4e13-a883-c3a71de022c0",
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      },
+      {
+        "pickup_point_id": "985a3eb6-182d-4121-8056-d79e6b9815ed",
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "reason": "Lowest feasible estimated incremental road travel cost"
+      }
+    ],
+    "routes": [
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "53c27fa3-4cfa-4187-9efa-989fc53ca309",
+        "trip_number": 1,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+            "planned_weight_kg": 900.0,
+            "planned_volume_m3": 3.2264,
+            "weight_after_kg": 900.0,
+            "volume_after_m3": 3.2264,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.0236
+          }
+        ],
+        "distance_km": 6.013,
+        "drive_minutes": 12.03,
+        "service_minutes": 20,
+        "total_minutes": 32.03,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2542,
+              13.1105
+            ],
+            [
+              80.233,
+              13.113
+            ],
+            [
+              80.2542,
+              13.1105
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "b62b948f-35c1-4203-b8ea-beaf862f9b69",
+        "trip_number": 2,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+            "planned_weight_kg": 160.0,
+            "planned_volume_m3": 0.5736,
+            "weight_after_kg": 160.0,
+            "volume_after_m3": 0.5736,
+            "remaining_weight_capacity_kg": 740.0,
+            "remaining_volume_capacity_m3": 3.6764
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "12a29b1a-edc6-425c-955b-d3b53db8da94",
+            "planned_weight_kg": 285.0,
+            "planned_volume_m3": 1.2,
+            "weight_after_kg": 445.0,
+            "volume_after_m3": 1.7736,
+            "remaining_weight_capacity_kg": 455.0,
+            "remaining_volume_capacity_m3": 2.4764
+          },
+          {
+            "sequence": 3,
+            "pickup_point_id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+            "planned_weight_kg": 455.0,
+            "planned_volume_m3": 0.975,
+            "weight_after_kg": 900.0,
+            "volume_after_m3": 2.7486,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.5014
+          }
+        ],
+        "distance_km": 29.6,
+        "drive_minutes": 59.2,
+        "service_minutes": 62,
+        "total_minutes": 121.2,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2542,
+              13.1105
+            ],
+            [
+              80.233,
+              13.113
+            ],
+            [
+              80.154,
+              13.114
+            ],
+            [
+              80.165,
+              13.098
+            ],
+            [
+              80.2542,
+              13.1105
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "aee8b909-cf88-437c-a48c-d016054a2b3f",
+        "trip_number": 3,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+            "planned_weight_kg": 525.0,
+            "planned_volume_m3": 1.125,
+            "weight_after_kg": 525.0,
+            "volume_after_m3": 1.125,
+            "remaining_weight_capacity_kg": 375.0,
+            "remaining_volume_capacity_m3": 3.125
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "4797fa20-f456-400b-8ce3-c6c9273eb674",
+            "planned_weight_kg": 375.0,
+            "planned_volume_m3": 1.0119,
+            "weight_after_kg": 900.0,
+            "volume_after_m3": 2.1369,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 2.1131
+          }
+        ],
+        "distance_km": 26.417,
+        "drive_minutes": 52.83,
+        "service_minutes": 41,
+        "total_minutes": 93.83,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2542,
+              13.1105
+            ],
+            [
+              80.165,
+              13.098
+            ],
+            [
+              80.21,
+              13.086
+            ],
+            [
+              80.2542,
+              13.1105
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "53c27fa3-4cfa-4187-9efa-989fc53ca309",
+        "trip_number": 4,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "4797fa20-f456-400b-8ce3-c6c9273eb674",
+            "planned_weight_kg": 255.0,
+            "planned_volume_m3": 0.6881,
+            "weight_after_kg": 255.0,
+            "volume_after_m3": 0.6881,
+            "remaining_weight_capacity_kg": 645.0,
+            "remaining_volume_capacity_m3": 3.5619
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "49d82b88-af55-4f9d-bff9-fea8686239ce",
+            "planned_weight_kg": 390.0,
+            "planned_volume_m3": 3.25,
+            "weight_after_kg": 645.0,
+            "volume_after_m3": 3.9381,
+            "remaining_weight_capacity_kg": 255.0,
+            "remaining_volume_capacity_m3": 0.3119
+          },
+          {
+            "sequence": 3,
+            "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+            "planned_weight_kg": 115.165,
+            "planned_volume_m3": 0.3119,
+            "weight_after_kg": 760.165,
+            "volume_after_m3": 4.25,
+            "remaining_weight_capacity_kg": 139.835,
+            "remaining_volume_capacity_m3": 0.0
+          }
+        ],
+        "distance_km": 22.12,
+        "drive_minutes": 44.24,
+        "service_minutes": 60,
+        "total_minutes": 104.24,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2542,
+              13.1105
+            ],
+            [
+              80.21,
+              13.086
+            ],
+            [
+              80.241,
+              13.083
+            ],
+            [
+              80.241,
+              13.061
+            ],
+            [
+              80.2542,
+              13.1105
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "b62b948f-35c1-4203-b8ea-beaf862f9b69",
+        "trip_number": 5,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+            "planned_weight_kg": 364.835,
+            "planned_volume_m3": 0.9881,
+            "weight_after_kg": 364.835,
+            "volume_after_m3": 0.9881,
+            "remaining_weight_capacity_kg": 535.165,
+            "remaining_volume_capacity_m3": 3.2619
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "42434e04-a294-4e13-a883-c3a71de022c0",
+            "planned_weight_kg": 90.0,
+            "planned_volume_m3": 0.35,
+            "weight_after_kg": 454.835,
+            "volume_after_m3": 1.3381,
+            "remaining_weight_capacity_kg": 445.165,
+            "remaining_volume_capacity_m3": 2.9119
+          }
+        ],
+        "distance_km": 16.205,
+        "drive_minutes": 32.41,
+        "service_minutes": 39,
+        "total_minutes": 71.41,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2542,
+              13.1105
+            ],
+            [
+              80.241,
+              13.061
+            ],
+            [
+              80.261,
+              13.073
+            ],
+            [
+              80.2542,
+              13.1105
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 1,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "c9cd25ae-d3c5-4022-bde2-fe1e780ef66b",
+            "planned_weight_kg": 790.0,
+            "planned_volume_m3": 2.4,
+            "weight_after_kg": 790.0,
+            "volume_after_m3": 2.4,
+            "remaining_weight_capacity_kg": 290.0,
+            "remaining_volume_capacity_m3": 2.7
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "985a3eb6-182d-4121-8056-d79e6b9815ed",
+            "planned_weight_kg": 290.0,
+            "planned_volume_m3": 1.1,
+            "weight_after_kg": 1080.0,
+            "volume_after_m3": 3.5,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.6
+          }
+        ],
+        "distance_km": 18.841,
+        "drive_minutes": 37.68,
+        "service_minutes": 48,
+        "total_minutes": 85.68,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.208,
+              13.014
+            ],
+            [
+              80.159,
+              13.036
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 2,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "3d877490-5f9d-4a79-9310-d05f9b2b6333",
+            "planned_weight_kg": 570.0,
+            "planned_volume_m3": 1.9,
+            "weight_after_kg": 570.0,
+            "volume_after_m3": 1.9,
+            "remaining_weight_capacity_kg": 240.0,
+            "remaining_volume_capacity_m3": 1.925
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+            "planned_weight_kg": 240.0,
+            "planned_volume_m3": 0.4,
+            "weight_after_kg": 810.0,
+            "volume_after_m3": 2.3,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.525
+          }
+        ],
+        "distance_km": 26.481,
+        "drive_minutes": 52.96,
+        "service_minutes": 36,
+        "total_minutes": 88.96,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.175,
+              13.079
+            ],
+            [
+              80.234,
+              13.041
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 3,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+            "planned_weight_kg": 600.0,
+            "planned_volume_m3": 1.0,
+            "weight_after_kg": 600.0,
+            "volume_after_m3": 1.0,
+            "remaining_weight_capacity_kg": 480.0,
+            "remaining_volume_capacity_m3": 4.1
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+            "planned_weight_kg": 480.0,
+            "planned_volume_m3": 1.5692,
+            "weight_after_kg": 1080.0,
+            "volume_after_m3": 2.5692,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 2.5308
+          }
+        ],
+        "distance_km": 11.177,
+        "drive_minutes": 22.35,
+        "service_minutes": 44,
+        "total_minutes": 66.35,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.234,
+              13.041
+            ],
+            [
+              80.244,
+              13.031
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 4,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+            "planned_weight_kg": 40.0,
+            "planned_volume_m3": 0.1308,
+            "weight_after_kg": 40.0,
+            "volume_after_m3": 0.1308,
+            "remaining_weight_capacity_kg": 770.0,
+            "remaining_volume_capacity_m3": 3.6942
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "e2a3c3f0-9d5f-4578-be2c-faa872ada198",
+            "planned_weight_kg": 610.0,
+            "planned_volume_m3": 2.9,
+            "weight_after_kg": 650.0,
+            "volume_after_m3": 3.0308,
+            "remaining_weight_capacity_kg": 160.0,
+            "remaining_volume_capacity_m3": 0.7942
+          },
+          {
+            "sequence": 3,
+            "pickup_point_id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+            "planned_weight_kg": 160.0,
+            "planned_volume_m3": 0.4571,
+            "weight_after_kg": 810.0,
+            "volume_after_m3": 3.4879,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 0.3371
+          }
+        ],
+        "distance_km": 16.208,
+        "drive_minutes": 32.42,
+        "service_minutes": 68,
+        "total_minutes": 100.42,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.244,
+              13.031
+            ],
+            [
+              80.25,
+              13.042
+            ],
+            [
+              80.267,
+              13.034
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 5,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+            "planned_weight_kg": 260.0,
+            "planned_volume_m3": 0.7429,
+            "weight_after_kg": 260.0,
+            "volume_after_m3": 0.7429,
+            "remaining_weight_capacity_kg": 820.0,
+            "remaining_volume_capacity_m3": 4.3571
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "cbae5764-670b-4ff4-a111-9e5def34764a",
+            "planned_weight_kg": 260.0,
+            "planned_volume_m3": 1.0,
+            "weight_after_kg": 520.0,
+            "volume_after_m3": 1.7429,
+            "remaining_weight_capacity_kg": 560.0,
+            "remaining_volume_capacity_m3": 3.3571
+          },
+          {
+            "sequence": 3,
+            "pickup_point_id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+            "planned_weight_kg": 362.934,
+            "planned_volume_m3": 3.3571,
+            "weight_after_kg": 882.934,
+            "volume_after_m3": 5.1,
+            "remaining_weight_capacity_kg": 197.066,
+            "remaining_volume_capacity_m3": 0.0
+          }
+        ],
+        "distance_km": 22.475,
+        "drive_minutes": 44.95,
+        "service_minutes": 52,
+        "total_minutes": 96.95,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.267,
+              13.034
+            ],
+            [
+              80.258,
+              13.006
+            ],
+            [
+              80.219,
+              12.981
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 6,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+            "planned_weight_kg": 37.066,
+            "planned_volume_m3": 0.3429,
+            "weight_after_kg": 37.066,
+            "volume_after_m3": 0.3429,
+            "remaining_weight_capacity_kg": 772.934,
+            "remaining_volume_capacity_m3": 3.4821
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "b22bfd2c-c784-45e4-bf9f-6093d208af99",
+            "planned_weight_kg": 320.0,
+            "planned_volume_m3": 0.8,
+            "weight_after_kg": 357.066,
+            "volume_after_m3": 1.1429,
+            "remaining_weight_capacity_kg": 452.934,
+            "remaining_volume_capacity_m3": 2.6821
+          },
+          {
+            "sequence": 3,
+            "pickup_point_id": "dc54b05b-a8ae-4178-93e4-375225f4b448",
+            "planned_weight_kg": 452.934,
+            "planned_volume_m3": 1.3936,
+            "weight_after_kg": 810.0,
+            "volume_after_m3": 2.5365,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.2885
+          }
+        ],
+        "distance_km": 15.644,
+        "drive_minutes": 31.29,
+        "service_minutes": 62,
+        "total_minutes": 93.29,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.219,
+              12.981
+            ],
+            [
+              80.198,
+              12.964
+            ],
+            [
+              80.218,
+              13.007
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 7,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "dc54b05b-a8ae-4178-93e4-375225f4b448",
+            "planned_weight_kg": 197.066,
+            "planned_volume_m3": 0.6064,
+            "weight_after_kg": 197.066,
+            "volume_after_m3": 0.6064,
+            "remaining_weight_capacity_kg": 882.934,
+            "remaining_volume_capacity_m3": 4.4936
+          }
+        ],
+        "distance_km": 1.32,
+        "drive_minutes": 2.64,
+        "service_minutes": 28,
+        "total_minutes": 30.64,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2206,
+              13.0108
+            ],
+            [
+              80.218,
+              13.007
+            ],
+            [
+              80.2206,
+              13.0108
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 1,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "cdafe0c6-d398-4bd1-926e-f6e40fe45f80",
+            "planned_weight_kg": 900.0,
+            "planned_volume_m3": 3.1,
+            "weight_after_kg": 900.0,
+            "volume_after_m3": 3.1,
+            "remaining_weight_capacity_kg": 90.0,
+            "remaining_volume_capacity_m3": 1.575
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "90bf1cbe-d396-4d5b-b191-82ebe16bbceb",
+            "planned_weight_kg": 90.0,
+            "planned_volume_m3": 0.325,
+            "weight_after_kg": 990.0,
+            "volume_after_m3": 3.425,
+            "remaining_weight_capacity_kg": 0.0,
+            "remaining_volume_capacity_m3": 1.25
+          }
+        ],
+        "distance_km": 46.002,
+        "drive_minutes": 92.0,
+        "service_minutes": 52,
+        "total_minutes": 144.0,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2279,
+              12.9012
+            ],
+            [
+              80.225,
+              12.823
+            ],
+            [
+              80.127,
+              12.924
+            ],
+            [
+              80.2279,
+              12.9012
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "800d1ce7-76bb-42e1-8c02-5c22fb9f0c17",
+        "trip_number": 2,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "90bf1cbe-d396-4d5b-b191-82ebe16bbceb",
+            "planned_weight_kg": 630.0,
+            "planned_volume_m3": 2.275,
+            "weight_after_kg": 630.0,
+            "volume_after_m3": 2.275,
+            "remaining_weight_capacity_kg": 90.0,
+            "remaining_volume_capacity_m3": 1.125
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+            "planned_weight_kg": 67.5,
+            "planned_volume_m3": 1.125,
+            "weight_after_kg": 697.5,
+            "volume_after_m3": 3.4,
+            "remaining_weight_capacity_kg": 22.5,
+            "remaining_volume_capacity_m3": 0.0
+          }
+        ],
+        "distance_km": 32.863,
+        "drive_minutes": 65.73,
+        "service_minutes": 39,
+        "total_minutes": 104.73,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2279,
+              12.9012
+            ],
+            [
+              80.127,
+              12.924
+            ],
+            [
+              80.143,
+              12.95
+            ],
+            [
+              80.2279,
+              12.9012
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 3,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+            "planned_weight_kg": 82.5,
+            "planned_volume_m3": 1.375,
+            "weight_after_kg": 82.5,
+            "volume_after_m3": 1.375,
+            "remaining_weight_capacity_kg": 907.5,
+            "remaining_volume_capacity_m3": 3.3
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "97d10658-95da-4942-b430-a5f780b51995",
+            "planned_weight_kg": 315.652,
+            "planned_volume_m3": 3.3,
+            "weight_after_kg": 398.152,
+            "volume_after_m3": 4.675,
+            "remaining_weight_capacity_kg": 591.848,
+            "remaining_volume_capacity_m3": 0.0
+          }
+        ],
+        "distance_km": 33.647,
+        "drive_minutes": 67.29,
+        "service_minutes": 34,
+        "total_minutes": 101.29,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2279,
+              12.9012
+            ],
+            [
+              80.143,
+              12.95
+            ],
+            [
+              80.238,
+              12.944
+            ],
+            [
+              80.2279,
+              12.9012
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "800d1ce7-76bb-42e1-8c02-5c22fb9f0c17",
+        "trip_number": 4,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "97d10658-95da-4942-b430-a5f780b51995",
+            "planned_weight_kg": 14.348,
+            "planned_volume_m3": 0.15,
+            "weight_after_kg": 14.348,
+            "volume_after_m3": 0.15,
+            "remaining_weight_capacity_kg": 705.652,
+            "remaining_volume_capacity_m3": 3.25
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "07962076-dce9-42e6-beea-8d4c688db493",
+            "planned_weight_kg": 299.342,
+            "planned_volume_m3": 3.25,
+            "weight_after_kg": 313.69,
+            "volume_after_m3": 3.4,
+            "remaining_weight_capacity_kg": 406.31,
+            "remaining_volume_capacity_m3": 0.0
+          }
+        ],
+        "distance_km": 13.015,
+        "drive_minutes": 26.03,
+        "service_minutes": 44,
+        "total_minutes": 70.03,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2279,
+              12.9012
+            ],
+            [
+              80.238,
+              12.944
+            ],
+            [
+              80.229,
+              12.934
+            ],
+            [
+              80.2279,
+              12.9012
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 5,
+        "stops": [
+          {
+            "sequence": 1,
+            "pickup_point_id": "07962076-dce9-42e6-beea-8d4c688db493",
+            "planned_weight_kg": 50.658,
+            "planned_volume_m3": 0.55,
+            "weight_after_kg": 50.658,
+            "volume_after_m3": 0.55,
+            "remaining_weight_capacity_kg": 939.342,
+            "remaining_volume_capacity_m3": 4.125
+          },
+          {
+            "sequence": 2,
+            "pickup_point_id": "4d17411b-0f48-46a2-bee7-b7480fbba54f",
+            "planned_weight_kg": 240.0,
+            "planned_volume_m3": 3.9,
+            "weight_after_kg": 290.658,
+            "volume_after_m3": 4.45,
+            "remaining_weight_capacity_kg": 699.342,
+            "remaining_volume_capacity_m3": 0.225
+          }
+        ],
+        "distance_km": 9.743,
+        "drive_minutes": 19.49,
+        "service_minutes": 45,
+        "total_minutes": 64.49,
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [
+              80.2279,
+              12.9012
+            ],
+            [
+              80.229,
+              12.934
+            ],
+            [
+              80.234,
+              12.922
+            ],
+            [
+              80.2279,
+              12.9012
+            ]
+          ]
+        },
+        "routing_source": "haversine_fallback_estimate"
+      }
+    ],
+    "deferred_pickups": []
+  },
+  "baseline_nearest_next": {
+    "metrics": {
+      "total_road_distance_km": 367.153,
+      "driving_time_minutes": 734.32,
+      "loading_service_minutes": 809,
+      "unloading_minutes": null,
+      "total_operating_minutes": 1543.32,
+      "weight_collected_kg": 12275.0,
+      "volume_collected_m3": 53.1499,
+      "number_of_trips": 17,
+      "depot_returns": 17,
+      "lorries_used": 7,
+      "estimated_fuel_l": 80.774,
+      "estimated_fuel_cost_inr": 8077.37,
+      "estimated_emissions_kg_co2": 216.473
+    },
+    "routes": [
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "53c27fa3-4cfa-4187-9efa-989fc53ca309",
+        "trip_number": 1,
+        "stops": [
+          {
+            "pickup_point_id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+            "planned_weight_kg": 900.0,
+            "planned_volume_m3": 3.2264,
+            "service_minutes": 20
+          }
+        ],
+        "distance_km": 6.013,
+        "drive_minutes": 12.03,
+        "service_minutes": 20,
+        "total_minutes": 32.03,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "b62b948f-35c1-4203-b8ea-beaf862f9b69",
+        "trip_number": 2,
+        "stops": [
+          {
+            "pickup_point_id": "b79c8b91-9265-4329-b7d3-a4fa50792c7a",
+            "planned_weight_kg": 160.0,
+            "planned_volume_m3": 0.5736,
+            "service_minutes": 20
+          },
+          {
+            "pickup_point_id": "49d82b88-af55-4f9d-bff9-fea8686239ce",
+            "planned_weight_kg": 390.0,
+            "planned_volume_m3": 3.25,
+            "service_minutes": 17
+          },
+          {
+            "pickup_point_id": "42434e04-a294-4e13-a883-c3a71de022c0",
+            "planned_weight_kg": 90.0,
+            "planned_volume_m3": 0.35,
+            "service_minutes": 14
+          },
+          {
+            "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+            "planned_weight_kg": 28.215,
+            "planned_volume_m3": 0.0764,
+            "service_minutes": 25
+          }
+        ],
+        "distance_km": 21.353,
+        "drive_minutes": 42.71,
+        "service_minutes": 76,
+        "total_minutes": 118.71,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "aee8b909-cf88-437c-a48c-d016054a2b3f",
+        "trip_number": 3,
+        "stops": [
+          {
+            "pickup_point_id": "4797fa20-f456-400b-8ce3-c6c9273eb674",
+            "planned_weight_kg": 630.0,
+            "planned_volume_m3": 1.7,
+            "service_minutes": 18
+          },
+          {
+            "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+            "planned_weight_kg": 270.0,
+            "planned_volume_m3": 0.7312,
+            "service_minutes": 25
+          }
+        ],
+        "distance_km": 20.22,
+        "drive_minutes": 40.44,
+        "service_minutes": 43,
+        "total_minutes": 83.44,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "53c27fa3-4cfa-4187-9efa-989fc53ca309",
+        "trip_number": 4,
+        "stops": [
+          {
+            "pickup_point_id": "b3c934e7-a1d3-4f99-8546-3eb77cb9a490",
+            "planned_weight_kg": 181.785,
+            "planned_volume_m3": 0.4923,
+            "service_minutes": 25
+          },
+          {
+            "pickup_point_id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+            "planned_weight_kg": 718.215,
+            "planned_volume_m3": 1.539,
+            "service_minutes": 23
+          }
+        ],
+        "distance_km": 32.044,
+        "drive_minutes": 64.09,
+        "service_minutes": 48,
+        "total_minutes": 112.09,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d0e3df80-5399-461f-88b9-54e5e0057a5e",
+        "vehicle_id": "b62b948f-35c1-4203-b8ea-beaf862f9b69",
+        "trip_number": 5,
+        "stops": [
+          {
+            "pickup_point_id": "1eac55c0-64c7-4a53-94fd-200077bbf951",
+            "planned_weight_kg": 261.785,
+            "planned_volume_m3": 0.561,
+            "service_minutes": 23
+          },
+          {
+            "pickup_point_id": "12a29b1a-edc6-425c-955b-d3b53db8da94",
+            "planned_weight_kg": 285.0,
+            "planned_volume_m3": 1.2,
+            "service_minutes": 19
+          }
+        ],
+        "distance_km": 29.587,
+        "drive_minutes": 59.17,
+        "service_minutes": 42,
+        "total_minutes": 101.17,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 1,
+        "stops": [
+          {
+            "pickup_point_id": "4d17411b-0f48-46a2-bee7-b7480fbba54f",
+            "planned_weight_kg": 240.0,
+            "planned_volume_m3": 3.9,
+            "service_minutes": 18
+          },
+          {
+            "pickup_point_id": "07962076-dce9-42e6-beea-8d4c688db493",
+            "planned_weight_kg": 71.382,
+            "planned_volume_m3": 0.775,
+            "service_minutes": 27
+          }
+        ],
+        "distance_km": 9.743,
+        "drive_minutes": 19.49,
+        "service_minutes": 45,
+        "total_minutes": 64.49,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "800d1ce7-76bb-42e1-8c02-5c22fb9f0c17",
+        "trip_number": 2,
+        "stops": [
+          {
+            "pickup_point_id": "07962076-dce9-42e6-beea-8d4c688db493",
+            "planned_weight_kg": 278.618,
+            "planned_volume_m3": 3.025,
+            "service_minutes": 27
+          },
+          {
+            "pickup_point_id": "97d10658-95da-4942-b430-a5f780b51995",
+            "planned_weight_kg": 35.87,
+            "planned_volume_m3": 0.375,
+            "service_minutes": 17
+          }
+        ],
+        "distance_km": 13.015,
+        "drive_minutes": 26.03,
+        "service_minutes": 44,
+        "total_minutes": 70.03,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 3,
+        "stops": [
+          {
+            "pickup_point_id": "97d10658-95da-4942-b430-a5f780b51995",
+            "planned_weight_kg": 294.13,
+            "planned_volume_m3": 3.075,
+            "service_minutes": 17
+          },
+          {
+            "pickup_point_id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+            "planned_weight_kg": 96.0,
+            "planned_volume_m3": 1.6,
+            "service_minutes": 17
+          }
+        ],
+        "distance_km": 33.647,
+        "drive_minutes": 67.29,
+        "service_minutes": 34,
+        "total_minutes": 101.29,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "800d1ce7-76bb-42e1-8c02-5c22fb9f0c17",
+        "trip_number": 4,
+        "stops": [
+          {
+            "pickup_point_id": "cdafe0c6-d398-4bd1-926e-f6e40fe45f80",
+            "planned_weight_kg": 720.0,
+            "planned_volume_m3": 2.48,
+            "service_minutes": 30
+          }
+        ],
+        "distance_km": 22.623,
+        "drive_minutes": 45.25,
+        "service_minutes": 30,
+        "total_minutes": 75.25,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "d8b4e1dd-3270-446c-b4e0-e7902809f4f2",
+        "vehicle_id": "e6d8e64b-fe9d-498b-98e1-1d7c14130b14",
+        "trip_number": 5,
+        "stops": [
+          {
+            "pickup_point_id": "cdafe0c6-d398-4bd1-926e-f6e40fe45f80",
+            "planned_weight_kg": 180.0,
+            "planned_volume_m3": 0.62,
+            "service_minutes": 30
+          },
+          {
+            "pickup_point_id": "90bf1cbe-d396-4d5b-b191-82ebe16bbceb",
+            "planned_weight_kg": 720.0,
+            "planned_volume_m3": 2.6,
+            "service_minutes": 22
+          },
+          {
+            "pickup_point_id": "841595e0-8228-4f3f-85f3-8f3a370f1f09",
+            "planned_weight_kg": 54.0,
+            "planned_volume_m3": 0.9,
+            "service_minutes": 17
+          }
+        ],
+        "distance_km": 49.677,
+        "drive_minutes": 99.35,
+        "service_minutes": 69,
+        "total_minutes": 168.35,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 1,
+        "stops": [
+          {
+            "pickup_point_id": "dc54b05b-a8ae-4178-93e4-375225f4b448",
+            "planned_weight_kg": 650.0,
+            "planned_volume_m3": 2.0,
+            "service_minutes": 28
+          },
+          {
+            "pickup_point_id": "c9cd25ae-d3c5-4022-bde2-fe1e780ef66b",
+            "planned_weight_kg": 430.0,
+            "planned_volume_m3": 1.3063,
+            "service_minutes": 26
+          }
+        ],
+        "distance_km": 4.228,
+        "drive_minutes": 8.46,
+        "service_minutes": 54,
+        "total_minutes": 62.46,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 2,
+        "stops": [
+          {
+            "pickup_point_id": "c9cd25ae-d3c5-4022-bde2-fe1e780ef66b",
+            "planned_weight_kg": 360.0,
+            "planned_volume_m3": 1.0937,
+            "service_minutes": 26
+          },
+          {
+            "pickup_point_id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+            "planned_weight_kg": 295.279,
+            "planned_volume_m3": 2.7313,
+            "service_minutes": 18
+          }
+        ],
+        "distance_km": 11.163,
+        "drive_minutes": 22.33,
+        "service_minutes": 44,
+        "total_minutes": 66.33,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 3,
+        "stops": [
+          {
+            "pickup_point_id": "11a3f259-11d8-4dd9-afe5-159fa73748a2",
+            "planned_weight_kg": 104.721,
+            "planned_volume_m3": 0.9687,
+            "service_minutes": 18
+          },
+          {
+            "pickup_point_id": "b22bfd2c-c784-45e4-bf9f-6093d208af99",
+            "planned_weight_kg": 320.0,
+            "planned_volume_m3": 0.8,
+            "service_minutes": 16
+          },
+          {
+            "pickup_point_id": "cbae5764-670b-4ff4-a111-9e5def34764a",
+            "planned_weight_kg": 260.0,
+            "planned_volume_m3": 1.0,
+            "service_minutes": 15
+          },
+          {
+            "pickup_point_id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+            "planned_weight_kg": 395.279,
+            "planned_volume_m3": 1.2923,
+            "service_minutes": 24
+          }
+        ],
+        "distance_km": 27.085,
+        "drive_minutes": 54.17,
+        "service_minutes": 73,
+        "total_minutes": 127.17,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 4,
+        "stops": [
+          {
+            "pickup_point_id": "48fb1b62-3031-42ae-8125-fc76edae02c5",
+            "planned_weight_kg": 124.721,
+            "planned_volume_m3": 0.4077,
+            "service_minutes": 24
+          },
+          {
+            "pickup_point_id": "e2a3c3f0-9d5f-4578-be2c-faa872ada198",
+            "planned_weight_kg": 610.0,
+            "planned_volume_m3": 2.9,
+            "service_minutes": 25
+          },
+          {
+            "pickup_point_id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+            "planned_weight_kg": 75.279,
+            "planned_volume_m3": 0.1255,
+            "service_minutes": 20
+          }
+        ],
+        "distance_km": 13.218,
+        "drive_minutes": 26.44,
+        "service_minutes": 69,
+        "total_minutes": 95.44,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 5,
+        "stops": [
+          {
+            "pickup_point_id": "189858fa-c90b-446a-abe4-f2eb82b099a5",
+            "planned_weight_kg": 764.721,
+            "planned_volume_m3": 1.2745,
+            "service_minutes": 20
+          },
+          {
+            "pickup_point_id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+            "planned_weight_kg": 315.279,
+            "planned_volume_m3": 0.9008,
+            "service_minutes": 19
+          }
+        ],
+        "distance_km": 16.857,
+        "drive_minutes": 33.71,
+        "service_minutes": 39,
+        "total_minutes": 72.71,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "3fd54692-03da-4582-85ce-7687e475641a",
+        "trip_number": 6,
+        "stops": [
+          {
+            "pickup_point_id": "eb948cf6-7b7b-4e99-8577-9e502fdd333d",
+            "planned_weight_kg": 104.721,
+            "planned_volume_m3": 0.2992,
+            "service_minutes": 19
+          },
+          {
+            "pickup_point_id": "3d877490-5f9d-4a79-9310-d05f9b2b6333",
+            "planned_weight_kg": 570.0,
+            "planned_volume_m3": 1.9,
+            "service_minutes": 16
+          },
+          {
+            "pickup_point_id": "985a3eb6-182d-4121-8056-d79e6b9815ed",
+            "planned_weight_kg": 135.279,
+            "planned_volume_m3": 0.5131,
+            "service_minutes": 22
+          }
+        ],
+        "distance_km": 37.862,
+        "drive_minutes": 75.72,
+        "service_minutes": 57,
+        "total_minutes": 132.72,
+        "routing_source": "haversine_fallback_estimate"
+      },
+      {
+        "facility_id": "5d745924-4968-44ea-91cb-1751b14ab086",
+        "vehicle_id": "171b4498-7bfb-4687-bcdc-9ef84368e8f8",
+        "trip_number": 7,
+        "stops": [
+          {
+            "pickup_point_id": "985a3eb6-182d-4121-8056-d79e6b9815ed",
+            "planned_weight_kg": 154.721,
+            "planned_volume_m3": 0.5869,
+            "service_minutes": 22
+          }
+        ],
+        "distance_km": 18.818,
+        "drive_minutes": 37.64,
+        "service_minutes": 22,
+        "total_minutes": 59.64,
+        "routing_source": "haversine_fallback_estimate"
+      }
+    ],
+    "deferred_pickup_ids": []
+  },
+  "comparison": {
+    "percentage_reductions": {
+      "total_road_distance_km": 5.28,
+      "driving_time_minutes": 5.28,
+      "total_operating_minutes": 4.78,
+      "estimated_fuel_cost_inr": 5.28,
+      "estimated_emissions_kg_co2": 5.28
+    },
+    "same_snapshot": true,
+    "same_assignments": true,
+    "same_fleet": true,
+    "baseline_accounted_pickups": 24,
+    "eligible_pickups": 24
+  }
+}
